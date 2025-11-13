@@ -1,0 +1,9 @@
+{
+	"name": "ramyafactory-azureproject",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "166bf344-ef8e-4069-8c3f-c8c9bb780668",
+		"tenantId": "9ff2cfbd-3efd-4d11-af16-80173b1978f7"
+	}
+}
