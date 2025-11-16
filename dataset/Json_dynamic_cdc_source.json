@@ -1,0 +1,43 @@
+{
+	"name": "Json_dynamic_cdc_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "datalake",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"container": {
+				"type": "String",
+				"defaultValue": "bronze"
+			},
+			"folder": {
+				"type": "String",
+				"defaultValue": "cdc"
+			},
+			"file": {
+				"type": "String",
+				"defaultValue": "cdc.json"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().file",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().folder",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().container",
+					"type": "Expression"
+				}
+			}
+		},
+		"schema": {}
+	}
+}
